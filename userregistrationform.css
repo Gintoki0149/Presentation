@@ -3,6 +3,7 @@
   }
 
 body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/550/114/original/vector-abstract-geometric-form-pattern-chaotic-flow-figure-background.jpg);
     font-family: 'Prompt', sans-serif;
     color: #333333;
 }
@@ -41,11 +42,12 @@ form{
 }
 
 .names_container:hover{
-    box-shadow: 2px 2px 10px burlywood;
+    box-shadow: 2px 2px 10px rgba(219, 134, 7, 0.948);
 }
 
 .names_container input{
     border: 3px solid burlywood;
+    background-color:rgba(248, 229, 166, 0.959);
     border-radius: 20px;
     margin: 6px;
     width: 350px;
@@ -68,6 +70,7 @@ form{
 }
 
 .form_item input{
+    background-color:rgba(248, 229, 166, 0.959);
     border: 3px solid burlywood;
     border-radius: 20px;
     padding: 10px;
@@ -78,32 +81,9 @@ form{
 }
 
 .gender_grid{
-    /* width: fit-content; */
     display: grid;
     grid-template-columns: 100px 200px 200px 200px;
-    /* grid-template-rows: repeat(3,35px); */
 }
-
-/* .gender{
-    grid-row: 1/ span 3;
-    align-self: self-start;
-}
-
-.gender_item1{
-    text-align: left;
-    width: fit-content;
-    grid-row: 1/span 1;
-}
-
-.gender_item2{
-    text-align: left;
-    grid-row: 2/span 1;
-}
-
-.gender_item3{
-    text-align: left;
-    grid-row: 3/span 1;
-} */
 
 .email_grid{
     display: grid;
@@ -134,7 +114,7 @@ form{
 }
 
 .form_item:hover{
-    box-shadow: 2px 2px 10px burlywood;
+    box-shadow: 2px 2px 10px rgba(219, 134, 7, 0.948);
 }
 
 .password_grid{
@@ -145,6 +125,7 @@ form{
 }
 
 .password_grid input{
+    background-color:rgba(248, 229, 166, 0.959);
     border-radius: 20px;
     width: fit-content;
 }
@@ -178,6 +159,7 @@ a:hover{
 }
 
 #submit_button{
+    background-color:rgba(234, 201, 93, 0.959);
     border: 2px solid burlywood;
     border-radius: 20px;
     padding: 10px;
@@ -186,19 +168,6 @@ a:hover{
 }
 
 #submit_button:hover{
-    box-shadow: 2px 2px 14px burlywood;
+    box-shadow: 2px 2px 10px rgba(219, 134, 7, 0.948);
     font-size: 32px;
-}
-
-@media screen and (max-width:1280px) {
-    .names_container{
-        display: grid;
-        grid-template-columns: repeat(2,40%) 20%;
-        column-gap: 10px;
-        justify-content:space-between;
-        margin-left: 1.5%;
-        margin-right: 1.5%;
-        padding: 1%;
-        font-size: 25px;
-    }
 }
