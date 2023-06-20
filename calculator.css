@@ -1,0 +1,111 @@
+h1{
+    text-align: center;
+    text-decoration: underline;
+    color: rgba(204, 109, 215, 0.852);
+    font-size: 50px;
+}
+
+body{
+    font-family: 'Prompt', sans-serif;
+    color: #333333;
+    background-color: rgb(53, 47, 47);
+    background-image: url(https://th.bing.com/th/id/R.b5bf5ba7d795dced4529dfccd3c10f9c?rik=l9XkUpH9%2fap4Rg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f0%2fc%2f4%2f147623.jpg&ehk=16saGPjdgzl6Y5XSVqVQmnILpVDIQ%2fxdDPl%2bLnOBAOI%3d&risl=&pid=ImgRaw&r=0);
+}
+
+
+.outer{
+    display: flex;
+    justify-content: center;
+}
+
+.screen{
+    grid-column: 1/span 4;
+    grid-row-start: 1;
+    display: flex;
+    align-items: center;
+    /* justify-content: right; */
+    text-align: right;
+    border: 3px black solid;
+    /* height: fit-content; */
+    /* text-size-adjust: 5; */
+    margin: 5px;
+    padding: 5px;
+    font-size: 35px;
+    background-color: rgb(53, 47, 47);
+    color: rgba(10, 202, 10, 0.852);
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    justify-content: center;
+    border: 3px grey solid;
+    border-radius: 25px;
+    width: fit-content;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    padding: 5px;
+    background-color: black;
+}
+
+#del{
+    grid-column: 4 / span 1;
+    grid-row: 2/span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 25px;
+    background-color: rgb(53, 47, 47);
+    color: rgba(204, 109, 215, 0.852);
+}
+
+#clear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: rgb(53, 47, 47);
+    color: red;
+}
+
+.operators{
+    display: flex;
+    border-radius: 50%; 
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: rgb(53, 47, 47);
+    color: rgba(204, 109, 215, 0.852);
+}
+
+.numbers{
+    display: flex;
+    border-radius: 50%; 
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    background-color: rgb(53, 47, 47);
+    color: rgba(10, 202, 10, 0.852);
+}
+
+#equals{
+    display: flex;
+    grid-column: 1/span 4;
+    border-radius: 50%; 
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background-color: rgb(53, 47, 47);
+    color: rgba(10, 202, 10, 0.852);
+}
+
+.font_increase{
+    font-size: 60px;
+}
