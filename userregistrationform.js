@@ -65,7 +65,6 @@ function getGender(male, female, others){
 }
 
 function validateForm(){
-    let valid = false;
     let userForm = document.forms["user_form"];
     let fname = userForm["fname"];
     let lname = userForm["lname"];
@@ -89,7 +88,6 @@ function validateForm(){
     console.log("checkPwd correct:"+checkPwd(pwd,pwd_error));
     console.log("ocnfirmPwd correct:"+confirmPwd(pwd,cpwd,cpwd_error));
     if(nameCorrect(fname,lname,name_error) && phoneCorrect(phone,phone_error) && dobCorrect(dob) && confirmPwd(pwd,cpwd,cpwd_error) && checkPwd(pwd,pwd_error)){
-        valid = true;
         user_obj = {
             "firstname":fname.value,
             "lastname":lname.value,
@@ -101,12 +99,12 @@ function validateForm(){
             "country":country,
             "pwd":CryptoJS.AES.encrypt(pwd, "G9MMa23PwYiPJejlM+8w+rQt4VY1JyAw0a+3wF/gvYKUPQWISBMpDZ6c5Ue+Lixh").toString()
         };
+        console.log(user_obj);
+        return true;
     }
     else{
         userForm["pwd"].value = "";
         userForm["cpwd"].value = "";
+        return false;
     }
-    console.log(user_obj);
-    console.log(valid);
-    return valid;
 }
