@@ -101,6 +101,7 @@ form{
 }
 
 .form_item select{
+    background-color:rgba(248, 229, 166, 0.959);
     border: 3px solid burlywood;
     border-radius: 20px;
     padding: 10px;
