@@ -56,7 +56,7 @@ form{
 }
 
 #name_error{
-    visibility: visible;
+    visibility: hidden;
 }
 
 .form_item{
