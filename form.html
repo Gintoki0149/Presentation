@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link rel="stylesheet" href="./form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="./form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+</head>
+
+<body>
+    <h1>Welcome! Please Fill This Form To Register As a User.</h1>
+    <div class="container-lg my-6">
+        <form name="user_form" class="row g-4 border border-3 border-danger rounded" onsubmit="return validateForm()" target="_blank">
+            <div class="col-md-4 custombg hoverable">
+                <label for="fname" class="form-label">Firstname</label>
+                <input type="text" class="form-control" id="fname" onkeyup="this.value=this.value.toUpperCase()" required>
+            </div>
+            <div class="col-md-4 custombg hoverable">
+                <label for="mname" class="form-label">Middlename</label>
+                <input type="text" class="form-control" id="mname" onkeyup="this.value=this.value.toUpperCase()">
+            </div>
+            <div class="col-md-4 custombg hoverable">
+                <label for="lname" class="form-label">Lastname</label>
+                <input type="text" class="form-control" id="lname" onkeyup="this.value=this.value.toUpperCase()" required>
+            </div>
+            <div id="name_error" class="col-12">
+                *Name can only have alphabets!
+            </div>
+            <div class="col-md-6 hoverable custombg">
+                <label for="dob">D.O.B</label>
+                <input type="date" class="form-control" id="dob">
+            </div>
+            <div id="dob_error" class="col-md-6 custombg">
+                *Invalid dob.
+            </div>
+            <div id="Gen" class="row g-3">
+                <div class="col-md-2 font_increase">
+                    Gender: 
+                </div>
+                <div class="col-sm-3">
+                    <input type="radio" id="male" name="gender" required>
+                    <label for="male">Male</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="radio" id="female" name="gender">
+                    <label for="male">Female</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="radio" id="others" name="gender">
+                    <label for="others">Others</label>
+                </div>
+            </div>
+            <div class="col-md-6 custombg hoverable">
+                <label for="pno" class="form-label">Phone number</label>
+                <input type="number" class="form-control" id="pno" required>
+            </div>
+            <div class="col-md-6 custombg hoverable">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="abc@gmail.com" required>
+            </div>
+            <div id="phone_error" class="col-12">
+                *Phone number has 10 digits only!
+            </div>
+            <div class="col-12 custombg hoverable">
+                <label for="Address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="Address" onkeyup="this.value=this.value.toUpperCase()" required>
+            </div>
+            <div class="col-md-6 custombg hoverable">
+                <label for="City" class="form-label">City</label>
+                <input type="text" class="form-control" id="City" onkeyup="this.value=this.value.toUpperCase()" required>
+            </div>
+            <div class="col-md-4 custombg hoverable">
+                <label for="State" class="form-label">State</label>
+                <select id="State" class="form-select" required>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu
+                    </option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>
+            <div class="col-md-2 custombg hoverable">
+                <label for="Zip" class="form-label">Zip</label>
+                <input type="number" class="form-control" id="Zip" required>
+            </div>
+            <div class="col-md-6 custombg hoverable">
+                <label for="pwd" class="form-label">Password</label>
+                <input type="password" class="form-control" id="pwd" onclick="checkPwd(this.value,pwd_error,cpwd_error)" onkeyup="checkPwd(this.value,pwd_error)"required>
+            </div>
+            <div class="col-md-6 custombg hoverable">
+                <label for="cpwd" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="cpwd" onclick="confirmPwd(pwd.value,this.value,cpwd_error)" onkeyup="confirmPwd(pwd.value,this.value,cpwd_error)" required disabled>
+            </div>
+            <div class="col-12" id="pwd_error">
+                *Password should have minimum 6 characters, one uppercase character, one lowercase character, one number
+                and one special character!
+            </div>
+            <div class="col-12" id="cpwd_error">
+                *Passwords do not match!
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                    <label class="form-check-label" for="gridCheck">
+                        <span>I agree to the terms and conditions.</span>
+                        <a href="./tnc.html" target="_blank">Terms and conditions</a>
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div id="submit" class="mb-3">
+                    <button type="submit" class="btn btn-outline-danger" value="submit">Sign up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

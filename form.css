@@ -1,0 +1,104 @@
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/550/114/original/vector-abstract-geometric-form-pattern-chaotic-flow-figure-background.jpg);
+}
+
+h1{
+    text-align: center;
+    padding-top: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 35px;
+}
+
+.border{
+    border-width: 5px;
+}
+
+.custombg input,
+.custombg input:disabled,
+.custombg select{
+    background-color:rgba(248, 229, 166, 0.959);
+}
+
+.custombg input:focus,
+.custombg select:focus {
+    background-color: rgba(248, 229, 166, 0.959); 
+}
+
+#Gen{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 2px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    font-size: large;
+}
+
+form{
+    font-family: 'Prompt', sans-serif;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+label{
+    font-size: large;
+}
+
+#name_error{
+    display: none;
+    color: red;
+}
+
+#dob_error{
+    display: none;
+    align-items: center;
+    color: red;
+}
+
+#phone_error{
+    display: none;
+    color: red;
+}
+
+#pwd_error{
+    display: none;
+    color: red;
+}
+
+.col-md-6 label:disabled{
+    color: antiquewhite;
+}
+
+/* #cpwd label:disabled{
+    color: antiquewhite;
+} */
+
+#cpwd_error{
+    display: none;
+    justify-content: flex-end;
+    color: red;
+}
+
+
+.font_increase{
+    font-size: large;
+}
+
+#submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hoverable{
+    padding-bottom: 10px;
+}
+
+.hoverable:hover{
+    box-shadow: 2px 2px 10px rgba(219, 134, 7, 0.948);
+}
+
+#Gen:hover{
+    box-shadow: 2px 2px 10px rgba(219, 134, 7, 0.948);
+}
