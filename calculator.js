@@ -1,43 +1,39 @@
-let buffer = 0;
+let a = null;
+let b =null;
 let bufferstr = "";
-let operator = "";
+let operator = null;
 let multiply = null;
 let divide = null;
 let exponent = null;
 let mod = null;
-
+let root = null;
+let screen;
+let equalclicked = false;
 function buttonClick(num){
-    let screen = document.getElementById("scr");
-    if(screen.innerHTML === "00") screen.innerHTML="";
-    bufferstr+=(num.toString());
-    screen.innerHTML=bufferstr;
-    console.log(bufferstr);
+    screen = document.getElementById("scr");
     multiply = document.getElementById("mult").innerHTML;
     divide = document.getElementById("div").innerHTML;
     exponent = document.getElementById("exp").innerHTML;
     modulo = document.getElementById("modulo").innerHTML;
-}
-
-function operatorClick(op){
-    if(buffer<0){
+    root = document.getElementById("sqrt").innerHTML
+    let str = num.toString();
+    if(equalclicked){
         bufferstr = "";
-        document.getElementById("scr").innerHTML = bufferstr;
-        return;
+        screen.innerHTML = bufferstr;
+        equalclicked = false;
     } 
-    buffer = parseFloat(bufferstr);
-    bufferstr = "";
-    let screen = document.getElementById("scr");
-    screen.innerHTML = "";
-    console.log(buffer);
-    operator = op;
-    console.log(operator);
-}
-
-function unaryClick(op){
-    buffer = parseFloat(bufferstr);
-    bufferstr = "";
-    if(buffer!=0) buffer = -buffer;
-    console.log(buffer);
+    if(str === multiply){
+        str = "*";
+    }
+    else if(str === divide){
+        str = "/";
+    }
+    else if(str === exp){
+        str = "**";
+    }
+    bufferstr+=str;
+    screen.innerHTML=bufferstr;
+    console.log(bufferstr);
 }
 
 function erase(){
@@ -49,39 +45,20 @@ function erase(){
         screen.innerHTML = bufferstr;
     }
     else if(bufferstr.length == 1){
-        bufferstr = "0";
+        bufferstr = "";
         let screen = document.getElementById("scr");
         screen.innerHTML = bufferstr;
     }
 }
 
 function equal(){
-    if(operator === "+"){
-        buffer+=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    else if(operator === "-"){
-        buffer-=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    else if(operator === multiply){
-        buffer*=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    else if(operator === divide){
-        buffer/=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    else if(operator === mod){
-        buffer%=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    else if(operator === exponent){
-        buffer**=parseFloat(bufferstr);
-        bufferstr = "";
-    }
-    let screen = document.getElementById("scr");
-    screen.innerHTML = buffer.toString();
+    screen = document.getElementById("scr");
+    let result = screen.innerHTML.toString().replace(root,"math.sqrt");
+    result = result.replace(exponent,"**");
+    console.log(result);
+    result = result.replace("log","math.log10");
+    screen.innerHTML = eval(result);
+    equalclicked = true;
 }
 
 function clearFull(){
