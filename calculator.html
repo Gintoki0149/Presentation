@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js'></script>
     <script type="text/javascript" src="./calculator.js"></script>
     <title>Calculator</title>
 </head>
@@ -14,27 +15,30 @@
     <h1>Calculator App</h1>
     <div class="outer">
         <div class="buttons">
-            <textarea class="screen" id="scr"></textarea>
+            <textarea class="screen" id="scr" readonly></textarea>
             <div class="font_increase" id="clear" onclick="clearFull()">C</div>
-            <div class="operators" id="modulo" onclick="operatorClick(this.innerHTML)">%</div>
-            <div class="operators font_increase" id="mult" onclick="operatorClick(this.innerHTML)">&times;</div>
+            <div class="operators" id="lbrack" onclick="buttonClick(this.innerHTML)">&lpar;</div>
+            <div class="operators" id="rbrack" onclick="buttonClick(this.innerHTML)">&rpar;</div>
             <div class="numbers" id="7" onclick="buttonClick(this.innerHTML)">7</div>
             <div class="numbers" id="8" onclick="buttonClick(this.innerHTML)">8</div>
             <div class="numbers" id="9" onclick="buttonClick(this.innerHTML)">9</div>
-            <div class="operators font_increase" id="div" onclick="operatorClick(this.innerHTML)">&divide;</div>
+            <div class="operators" id="modulo" onclick="buttonClick(this.innerHTML)">%</div>
             <div class="numbers" id="4" onclick="buttonClick(this.innerHTML)">4</div>
             <div class="numbers" id="5" onclick="buttonClick(this.innerHTML)">5</div>
             <div class="numbers" id="6" onclick="buttonClick(this.innerHTML)">6</div>
-            <div class="operators font_increase" id="exp" onclick="operatorClick(this.innerHTML)">&exponentiale;</div>
+            <div class="operators font_increase" id="div" onclick="buttonClick(this.innerHTML)">&divide;</div>
             <div class="numbers" id="1" onclick="buttonClick(this.innerHTML)">1</div>
             <div class="numbers" id="2" onclick="buttonClick(this.innerHTML)">2</div>
             <div class="numbers" id="3" onclick="buttonClick(this.innerHTML)">3</div>
-            <div class="operators font_increase" id="sub" onclick="operatorClick(this.innerHTML)">-</div>
-            <div class="numbers " id="unary" onclick="unaryClick(this.innerHTML)">+/-</div>
+            <div class="operators font_increase" id="exp" onclick="buttonClick(this.innerHTML)">&exponentiale;</div>
             <div class="numbers" id="0" onclick="buttonClick(this.innerHTML)">0</div>
             <div class="numbers font_increase" id="dec" onclick="buttonClick(this.innerHTML)">.</div>
-            <div class="operators font_increase" id="add" onclick="operatorClick(this.innerHTML)">+</div>
-            <div id="equals" onclick="equal()">=</div>
+            <div class="operators font_increase" id="mult" onclick="buttonClick(this.innerHTML)">&times;</div>
+            <div class="operators" id="sqrt" onclick="buttonClick(this.innerHTML)">&radic;</div>
+            <div class="operators" id="log" onclick="buttonClick(this.innerHTML)">log</div>
+            <div class="operators font_increase" id="sub" onclick="buttonClick(this.innerHTML)">-</div>
+            <div class="operators font_increase" id="add" onclick="buttonClick(this.innerHTML)">+</div>
+            <div class="operators"id="equals" onclick="equal()">=</div>
             <div id="del" onclick="erase()">DEL</div>
         </div>
     </div>
